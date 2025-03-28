@@ -1,0 +1,132 @@
+#root {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100dvh;
+}
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+.image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+:root {
+  --color-dark: #060606;
+  --color-light: #f9f9f9;
+  --color-body: #9f9f9f;
+  --color-coal: #141414;
+  --color-mustard: #262112;
+  --color-theme: #fdc448;
+  --color-secondary: #43371e;
+}
+
+.bg-light {
+  background-color: var(--color-light);
+  color: var(--color-coal);
+}
+.bg-light h1, .bg-light h2, .bg-light h3, .bg-light h4, .bg-light h5, .bg-light h6 {
+  color: var(--color-dark);
+}
+.bg-light .link {
+  color: var(--color-dark);
+}
+
+.bg-dark {
+  background-color: var(--color-dark);
+  color: var(--color-body);
+}
+.bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark h4, .bg-dark h5, .bg-dark h6 {
+  color: var(--color-light);
+}
+.bg-dark .link {
+  color: var(--color-light);
+}
+
+.bg-coal {
+  background-color: var(--color-coal);
+  color: var(--color-body);
+}
+.bg-coal h1, .bg-coal h2, .bg-coal h3, .bg-coal h4, .bg-coal h5, .bg-coal h6 {
+  color: var(--color-light);
+}
+.bg-coal .link {
+  color: var(--color-light);
+}
+
+.bg-mustard {
+  background-color: var(--color-mustard);
+  color: var(--color-body);
+}
+.bg-mustard h1, .bg-mustard h2, .bg-mustard h3, .bg-mustard h4, .bg-mustard h5, .bg-mustard h6 {
+  color: var(--color-light);
+}
+.bg-mustard .link {
+  color: var(--color-light);
+}
+
+.link {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--color-dark);
+  transition: color 0.25s ease-in-out;
+}
+.link:hover {
+  color: var(--color-theme);
+}
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-theme);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease-in-out;
+}
+.link:hover::after {
+  transform: scaleX(1);
+}
+.link i {
+  margin-left: 0.5rem;
+  font-size: 1rem;
+}
+
+.active-link {
+  color: var(--color-theme) !important;
+  text-decoration: underline;
+}
+
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 8px 30px;
+  font-size: 18px;
+  transition: all 0.25s ease-in-out;
+  text-decoration: none;
+}
+.btn i {
+  margin-left: 0.5rem;
+  font-size: 1rem;
+}

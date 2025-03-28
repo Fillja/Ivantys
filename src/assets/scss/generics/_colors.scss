@@ -1,0 +1,62 @@
+//BASE COLORS
+:root{
+    --color-dark: #060606;
+    --color-light: #f9f9f9;
+    --color-body: #9f9f9f;
+    --color-coal: #141414;
+    --color-mustard: #262112;
+    --color-theme: #fdc448;
+    --color-secondary: #43371e;
+}
+
+.bg-light{
+    background-color: var(--color-light);
+    color: var(--color-coal);
+
+    h1,h2,h3,h4,h5,h6{
+        color: var(--color-dark);
+    }
+
+    .link{
+        color: var(--color-dark);
+    }
+}
+
+.bg-dark{
+    background-color: var(--color-dark);
+    color: var(--color-body);
+
+    h1,h2,h3,h4,h5,h6{
+        color: var(--color-light);
+    }
+
+    .link{
+        color: var(--color-light);
+    }
+}
+
+.bg-coal{
+    background-color: var(--color-coal);
+    color: var(--color-body);
+
+    h1,h2,h3,h4,h5,h6{
+        color: var(--color-light);
+    }
+
+    .link{
+        color: var(--color-light);
+    }
+}
+
+.bg-mustard{
+    background-color: var(--color-mustard);
+    color: var(--color-body);
+
+    h1,h2,h3,h4,h5,h6{
+        color: var(--color-light);
+    }
+
+    .link{
+        color: var(--color-light);
+    }
+}
