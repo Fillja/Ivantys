@@ -30,7 +30,7 @@
         transform: scaleX(1);
     }
 
-    i{
+    svg{
         margin-left: .5rem;
         font-size: 1rem;
     }
@@ -39,6 +39,7 @@
 .active-link{
     color: var(--color-theme) !important;
     text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 //BUTTON STYLING
@@ -53,8 +54,43 @@
     transition: all 0.25s ease-in-out;
     text-decoration: none;
 
-    i{
+    svg{
         margin-left: .5rem;
         font-size: 1rem;
+    }
+}
+
+.btn-theme{
+    background-color: var(--color-theme);
+    border: 1px solid var(--color-theme);
+    color: var(--color-dark);
+
+    &:hover{
+        background-color: var(--color-secondary);
+        border-color: var(--color-secondary);
+        color: var(--color-light);
+    }
+}
+
+.btn-secondary{
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-secondary);
+    color: var(--color-light);
+
+    &:hover{
+        background-color: var(--color-theme);
+        border-color: var(--color-theme);
+        color: var(--color-dark);
+    }
+}
+
+.btn-transparent{
+    background-color: transparent;
+    border: 1px solid var(--color-light);
+    color: var(--color-light);
+
+    &:hover{
+        border-color: var(--color-theme);
+        color: var(--color-theme);
     }
 }
