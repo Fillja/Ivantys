@@ -1,0 +1,17 @@
+.home-expertise-section{
+    
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        gap: 2rem;
+
+        @include mobile{
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include laptop{
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+}
