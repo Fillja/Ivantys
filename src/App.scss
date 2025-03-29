@@ -7,4 +7,9 @@
 @import './assets/scss/generics/components';
 
 //SECTION IMPORTS
-@import './assets/scss/sections/colorPalette'
+@import './assets/scss/sections/colorPalette';
+@import './assets/scss/sections/header';
+
+
+//HOME SECTIONS
+@import './assets/scss/sections/home-sections/heroSection';

@@ -1,0 +1,74 @@
+header{
+    background-color: transparent !important;
+    padding: 1.5rem 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto;
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo-container{
+            
+            .logo{
+                width: 10rem;
+            }
+        }
+
+        
+        .navigation-container{
+            display: flex;
+            gap: 1rem;
+
+            .link{
+                font-size: 1rem;
+                font-family: 'Rajdhani-SemiBold', sans-serif;
+            }
+        }
+
+        .social-container{
+            display: flex;
+            gap: .5rem;
+
+            .social-link{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: var(--color-gray);
+                color: var(--color-light);
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                transition: all .3s ease-in-out;
+
+                svg{
+                    width: 15px;
+                    height: 15px;
+                }
+
+                &:hover{
+                    background-color: var(--color-theme);
+                    color: var(--color-dark);
+                }
+            }
+
+        }
+
+        .mobile-menu-container{
+
+            .burger-button{
+                background: none;
+                border: none;
+                color: var(--color-light);
+                
+                svg{
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+        }
+    }
+}

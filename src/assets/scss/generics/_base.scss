@@ -2,6 +2,7 @@
     display: grid;
     grid-template-rows: auto 1fr auto;
     height: 100dvh;
+    position: relative;
 }
 
 * {
@@ -12,7 +13,7 @@
 }
 
 section{
-    padding: 5rem 0;
+    padding: 6rem 0;
 }
 
 .image{

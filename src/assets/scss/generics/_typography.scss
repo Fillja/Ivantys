@@ -14,9 +14,10 @@
 }
 
 html, body{
-    font-size: 1.1rem;
+    font-size: 16px;
     font-weight: 300;
     font-family: 'Rubik', sans-serif;
+    line-height: 1.5rem;
 
     h1,h2,h3,h4,h5,h6{
         font-family: 'Rajdhani-Bold', sans-serif;
@@ -25,9 +26,11 @@ html, body{
 
     h1{
         font-size: 60px;
+        line-height: 4rem;
 
         @include mobile{
             font-size: 80px;
+            line-height: 5rem;
         }
     }
     

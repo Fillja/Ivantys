@@ -1,10 +1,12 @@
 import React from 'react'
-import ColorPaletteComponent from '../components/ColorPalletteComponent'
+import Header from '../components/Header'
+import HeroSection from '../components/home-components/HeroSection'
 
 const Home = () => {
   return (
     <>
-      <ColorPaletteComponent/>
+      <Header/>
+      <HeroSection/>
     </>
   )
 }

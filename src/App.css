@@ -2,6 +2,7 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
   height: 100dvh;
+  position: relative;
 }
 
 * {
@@ -12,7 +13,7 @@
 }
 
 section {
-  padding: 5rem 0;
+  padding: 6rem 0;
 }
 
 .image {
@@ -36,9 +37,10 @@ section {
   src: url("/src/assets/fonts/Rubik-VariableFont_wght.ttf");
 }
 html, body {
-  font-size: 1.1rem;
+  font-size: 16px;
   font-weight: 300;
   font-family: "Rubik", sans-serif;
+  line-height: 1.5rem;
 }
 html h1, html h2, html h3, html h4, html h5, html h6, body h1, body h2, body h3, body h4, body h5, body h6 {
   font-family: "Rajdhani-Bold", sans-serif;
@@ -46,10 +48,12 @@ html h1, html h2, html h3, html h4, html h5, html h6, body h1, body h2, body h3,
 }
 html h1, body h1 {
   font-size: 60px;
+  line-height: 4rem;
 }
 @media (min-width: 768px) {
   html h1, body h1 {
     font-size: 80px;
+    line-height: 5rem;
   }
 }
 html h2, body h2 {
@@ -71,6 +75,7 @@ html h6, body h6 {
 :root {
   --color-dark: #060606;
   --color-light: #f9f9f9;
+  --color-gray: #232323;
   --color-body: #9f9f9f;
   --color-coal: #141414;
   --color-mustard: #262112;
@@ -167,7 +172,7 @@ html h6, body h6 {
   font-size: 1.5rem;
   font-weight: 600;
   border-radius: 30px;
-  padding: 8px 30px;
+  padding: 12px 30px;
   font-size: 18px;
   transition: all 0.25s ease-in-out;
   text-decoration: none;
@@ -273,6 +278,15 @@ html h6, body h6 {
   opacity: 1;
 }
 
+.subtitle {
+  color: var(--color-theme);
+  font-weight: 500;
+}
+
+.heading-container h1, .heading-container h2 {
+  margin-top: 1rem;
+}
+
 .colorpalette-section .container .content {
   display: flex;
   flex-direction: column;
@@ -281,4 +295,117 @@ html h6, body h6 {
 .colorpalette-section .container .content .button-div {
   display: flex;
   gap: 1rem;
+}
+
+header {
+  background-color: transparent !important;
+  padding: 1.5rem 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .container .logo-container .logo {
+  width: 10rem;
+}
+header .container .navigation-container {
+  display: flex;
+  gap: 1rem;
+}
+header .container .navigation-container .link {
+  font-size: 1rem;
+  font-family: "Rajdhani-SemiBold", sans-serif;
+}
+header .container .social-container {
+  display: flex;
+  gap: 0.5rem;
+}
+header .container .social-container .social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-gray);
+  color: var(--color-light);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease-in-out;
+}
+header .container .social-container .social-link svg {
+  width: 15px;
+  height: 15px;
+}
+header .container .social-container .social-link:hover {
+  background-color: var(--color-theme);
+  color: var(--color-dark);
+}
+header .container .mobile-menu-container .burger-button {
+  background: none;
+  border: none;
+  color: var(--color-light);
+}
+header .container .mobile-menu-container .burger-button svg {
+  width: 25px;
+  height: 25px;
+}
+
+.home-hero-section {
+  background-image: url("/src/assets/images/Banner Background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (min-width: 996px) {
+  .home-hero-section {
+    padding: 11rem 0;
+  }
+}
+.home-hero-section .container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+@media (min-width: 996px) {
+  .home-hero-section .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.home-hero-section .container .content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 100%;
+  padding-top: 5rem;
+}
+@media (min-width: 996px) {
+  .home-hero-section .container .content-container {
+    max-width: 22rem;
+  }
+}
+@media (min-width: 1400px) {
+  .home-hero-section .container .content-container {
+    max-width: 30rem;
+  }
+}
+.home-hero-section .container .content-container .subtitle {
+  font-family: "Rajdhani-Bold", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+}
+.home-hero-section .container .image-container .image {
+  height: 25rem;
+  width: 25rem;
+  border: 2px solid var(--color-theme);
+  border-radius: 100%;
+}
+@media (min-width: 1400px) {
+  .home-hero-section .container .image-container .image {
+    height: 35rem;
+    width: 35rem;
+  }
 }
