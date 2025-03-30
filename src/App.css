@@ -13,15 +13,12 @@
 }
 
 section {
-  padding: 6rem 0;
+  padding: 4rem 0;
 }
-
-.image {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+@media (min-width: 768px) {
+  section {
+    padding: 6rem 0;
+  }
 }
 
 .container {
@@ -63,7 +60,7 @@ section {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 996px) {
   .desktop-hidden {
     visibility: hidden !important;
     display: none !important;
@@ -86,15 +83,6 @@ section {
 .reveal.active {
   transform: translateY(0px);
   opacity: 1;
-}
-
-.subtitle {
-  color: var(--color-theme);
-  font-weight: 500;
-}
-
-.heading-container h1, .heading-container h2 {
-  margin-top: 1rem;
 }
 
 @font-face {
@@ -131,6 +119,7 @@ html h1, body h1 {
 }
 html h2, body h2 {
   font-size: 50px;
+  line-height: 3rem;
 }
 html h3, body h3 {
   font-size: 40px;
@@ -292,7 +281,7 @@ html h6, body h6 {
   color: var(--color-theme);
 }
 
-.service-item {
+.service-card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -305,28 +294,28 @@ html h6, body h6 {
   transition: all 0.3s ease-in-out;
 }
 @media (min-width: 1200px) {
-  .service-item {
+  .service-card {
     width: 15rem;
   }
 }
 @media (min-width: 1400px) {
-  .service-item {
+  .service-card {
     width: 100%;
   }
 }
-.service-item:hover p {
+.service-card:hover p {
   color: var(--color-theme);
 }
-.service-item:hover p::after {
+.service-card:hover p::after {
   transform: scaleX(1);
 }
-.service-item p {
+.service-card p {
   position: relative;
   display: inline-block;
   transition: color 0.25s ease-in-out;
   color: var(--color-body);
 }
-.service-item p::after {
+.service-card p::after {
   content: "";
   display: block;
   width: 100%;
@@ -336,12 +325,57 @@ html h6, body h6 {
   transform-origin: left;
   transition: transform 0.25s ease-in-out;
 }
-.service-item .service-icon {
+.service-card .service-icon {
   color: var(--color-theme);
   width: 40px;
   height: 40px;
 }
 
+.coal-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--color-coal);
+  padding: 2rem;
+  border-radius: 30px;
+  width: 100%;
+}
+.coal-card .icon-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.coal-card .icon-heading svg {
+  width: 25px;
+  height: 25px;
+  background-color: var(--color-theme);
+  color: var(--color-dark);
+  padding: 1rem;
+  border-radius: 100%;
+}
+
+.section-heading .heading {
+  margin-top: 1rem;
+}
+.section-heading .subtitle {
+  color: var(--color-theme);
+  font-weight: 500;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.image-container .image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 30px;
+}
 .colorpalette-section .container .content {
   display: flex;
   flex-direction: column;
@@ -413,6 +447,7 @@ header .container .mobile-menu-container .burger-button svg {
   background-image: url("/src/assets/images/Banner Background.png");
   background-repeat: no-repeat;
   background-size: cover;
+  padding: 8rem 0;
 }
 @media (min-width: 996px) {
   .home-hero-section {
@@ -430,24 +465,21 @@ header .container .mobile-menu-container .burger-button svg {
     justify-content: space-between;
   }
 }
-.home-hero-section .container .content-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.home-hero-section .container .text-container {
   max-width: 100%;
   padding-top: 5rem;
 }
 @media (min-width: 996px) {
-  .home-hero-section .container .content-container {
+  .home-hero-section .container .text-container {
     max-width: 22rem;
   }
 }
 @media (min-width: 1400px) {
-  .home-hero-section .container .content-container {
+  .home-hero-section .container .text-container {
     max-width: 30rem;
   }
 }
-.home-hero-section .container .content-container .subtitle {
+.home-hero-section .container .text-container .subtitle {
   font-family: "Rajdhani-Bold", sans-serif;
   font-size: 32px;
   font-weight: 700;
@@ -479,5 +511,48 @@ header .container .mobile-menu-container .burger-button svg {
 @media (min-width: 1200px) {
   .home-expertise-section .container {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.home-feature-section .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+}
+@media (min-width: 996px) {
+  .home-feature-section .container {
+    flex-direction: row;
+  }
+}
+.home-feature-section .container .text-container .card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .home-feature-section .container .text-container .card-container {
+    flex-direction: row;
+  }
+}
+@media (min-width: 996px) {
+  .home-feature-section .container .text-container .card-container .coal-card {
+    width: 14rem;
+  }
+}
+@media (min-width: 1400px) {
+  .home-feature-section .container .text-container .card-container .coal-card {
+    width: 18rem;
+  }
+}
+@media (min-width: 996px) {
+  .home-feature-section .container .image-container .image {
+    width: 70rem;
+    height: 39rem;
+  }
+}
+@media (min-width: 1400px) {
+  .home-feature-section .container .image-container .image {
+    height: 34rem;
   }
 }

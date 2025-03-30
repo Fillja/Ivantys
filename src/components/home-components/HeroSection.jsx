@@ -2,6 +2,7 @@ import React from 'react'
 import LinkButton from '../generic-components/LinkButton'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import HeroImage from '@images/template-headshot.jpg'
+import ImageContainer from '../generic-components/ImageContainer'
 
 const HeroSection = () => {
   return (
@@ -9,11 +10,11 @@ const HeroSection = () => {
 
         <div className="container">
 
-            <div className="content-container">
+            <div className="text-container">
 
-                <div className="heading-container">
+                <div className="section-heading">
                     <span className='subtitle'>Web Developer</span>
-                    <h1>Robin Gombkötö</h1>
+                    <h1 className="heading">Robin Gombkötö</h1>
                 </div>
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dui purus, dignissim ut consequat in, mattis eget sapien. Pellentesque non sodales enim, ut dapibus massa.</p>
@@ -24,9 +25,7 @@ const HeroSection = () => {
 
             </div>
 
-            <div className='image-container'>
-                <img className="image" src={HeroImage} alt="Hero image" />
-            </div>
+            <ImageContainer imgSrc={HeroImage} imgAlt={"Hero image"}/>
         </div>
 
     </section>
