@@ -13,7 +13,7 @@ const HeroSection = () => {
             <div className="text-container">
 
                 <div className="section-heading">
-                    <span className='subtitle'>Web Developer</span>
+                    <span className='subtitle'>Fullstack Developer</span>
                     <h1 className="heading">Robin Gombkötö</h1>
                 </div>
 

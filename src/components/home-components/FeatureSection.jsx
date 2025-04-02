@@ -16,8 +16,8 @@ const FeatureSection = () => {
                 <SectionHeading subtitle={"MY FEATURES"} heading={"Let's create something special together"}/>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dui purus, dignissim ut consequat in, mattis eget sapien.</p>
                 <div className='card-container'>
-                    <CoalCard icon={faNetworkWired} heading={"Techstack"} text={"Explore my complete techstack and how I can help you to create something great."} />
-                    <CoalCard icon={faBookBookmark} heading={"Expertise"} text={"Read more about my areas of expertise that have been perfected with experience."} />
+                    <CoalCard icon={faNetworkWired} heading={"Techstack"} text={"Explore my techstack and read about how I can help you to create something great."} />
+                    <CoalCard icon={faBookBookmark} heading={"Expertise"} text={"Read more about my areas of expertise that have been honed through experience."} />
                 </div>
                 <div className='tablet-hidden'>
                     <LinkButton color={"theme"} url={"/services"} text={"My services"} icon={faChevronRight} />

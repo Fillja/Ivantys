@@ -13,8 +13,12 @@ header{
 
         .logo-container{
             
-            .logo{
-                width: 10rem;
+            .logo-link{
+                display: flex;
+                
+                .logo{
+                    width: 7.5rem;
+                }
             }
         }
 

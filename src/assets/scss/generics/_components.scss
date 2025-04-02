@@ -104,6 +104,7 @@
 
 //IMAGE CONTAINER
 .image-container{
+    position: relative;
 
     .image{
         display: block;
@@ -111,8 +112,24 @@
         height: auto;  
         object-fit: cover;
         border-radius: 30px;
+    }
 
-        @include desktop{
+    .image-text{
+        position: absolute;
+        bottom: 2rem;
+        right: 4rem;
+        font-weight: 500;
+        color: var(--color-light);
+        text-shadow: 2px 2px 10px var(--color-dark);
+        font-size: 2rem;
+
+        @include tablet{
+            font-size: 3rem;
+        }
+        
+        svg{
+            margin-left: 1rem;
+            filter: drop-shadow(2px 2px 10px var(--color-dark));
         }
     }
 }

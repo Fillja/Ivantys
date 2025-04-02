@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '@images/ivantys-logo-white.png'
+import logo from '@images/robin-logo-white.png'
 import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
@@ -12,7 +12,7 @@ const Header = () => {
         <div className="container">
 
             <div className="logo-container">
-                <img className="logo" src={logo} alt="Ivantys logo" />
+                <NavLink className="logo-link" to="/"><img className="logo" src={logo} alt="Ivantys logo" /></NavLink>
             </div>
             
             <nav className="navigation-container tablet-hidden">
