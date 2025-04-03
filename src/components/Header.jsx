@@ -7,7 +7,7 @@ import { faEnvelope, faPhone, faBarsStaggered } from '@fortawesome/free-solid-sv
 
 const Header = () => {
   return (
-    <header class="bg-dark">
+    <header className="bg-dark">
 
         <div className="container">
 

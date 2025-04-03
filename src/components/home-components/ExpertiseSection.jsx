@@ -8,9 +8,9 @@ const ExpertiseSection = () => {
 
         <div className="container">
 
-            <ServiceCard url={"/services"} heading={"Websites"} icon={faDisplay} text={"Learn more"} textIcon={faArrowRight}/>
-            <ServiceCard url={"/services"} heading={"Systems"} icon={faPenRuler} text={"Learn more"} textIcon={faArrowRight}/>
-            <ServiceCard url={"/services"} heading={"Databases"} icon={faDatabase} text={"Learn more"} textIcon={faArrowRight}/>
+            <ServiceCard url={"/services"} heading={"Website"} icon={faDisplay} text={"Learn more"} textIcon={faArrowRight}/>
+            <ServiceCard url={"/services"} heading={"Software"} icon={faPenRuler} text={"Learn more"} textIcon={faArrowRight}/>
+            <ServiceCard url={"/services"} heading={"Database"} icon={faDatabase} text={"Learn more"} textIcon={faArrowRight}/>
             <ServiceCard url={"/services"} heading={"Hosting"} icon={faServer} text={"Learn more"} textIcon={faArrowRight}/>
 
         </div>

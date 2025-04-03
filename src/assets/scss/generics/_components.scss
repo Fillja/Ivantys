@@ -133,3 +133,96 @@
         }
     }
 }
+
+//CONTACT LINK
+.contact-link{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .contact-icon{
+        font-size: 1.3rem;
+        border-radius: 100%;
+        padding: 1.3rem;
+        border: 1px solid var(--color-body);
+        color: var(--color-light);
+    }
+}
+
+//CONTACT FORM
+.contact-form{
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "name"
+    "email"
+    "phone"
+    "subject"
+    "message"
+    "button";
+    
+    width: 100%;
+
+
+    @include mobile{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "name email"
+        "phone subject"
+        "message message"
+        "button button";
+        
+        width: auto;
+    }
+
+
+    .name-container{
+        grid-area: name;
+    }
+    .email-container{
+        grid-area: email;
+    }
+    .phone-container{
+        grid-area: phone;
+    }
+    .subject-container{
+        grid-area: subject;
+    }
+    .message-container{
+        grid-area: message;
+
+        #form-message{
+            width: 100%;
+            resize: none;
+        }
+    }
+    .button-container{
+        grid-area: button;
+        
+        .btn{
+            width: 100%;
+        }
+    }
+
+    input, textarea{
+        background-color: transparent;
+        color: var(--color-light);
+        border: solid 1px var(--color-gray);
+        border-radius: 8px;
+    }
+
+    input{
+        padding: 1.5rem 4rem 1.5rem 1rem;
+        width: 100%;
+
+        @include mobile{
+            width: auto;
+        }
+    }
+
+    textarea{
+        padding: 1.5rem 4rem 4rem 1rem;
+    }
+
+}
