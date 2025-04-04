@@ -1,3 +1,4 @@
+import { send } from '@emailjs/browser';
 import React, {useState} from 'react'
 
 const ContactForm = () => {
@@ -10,19 +11,43 @@ const ContactForm = () => {
         message: ''
     });
 
+    const [emailError, setEmailError] = useState(false);
+    const [phoneError, setPhoneError] = useState(false);
+    const [textError, setTextError] = useState(false);
+    const [messageError, setMessageError] = useState(false);
+    const [successMessage, setSuccessMessage] = useState();
+    const [errorMessage, setErrorMessage] = useState();
+
+    const isFormValid = (
+        !emailError &&
+        !textError &&
+        !messageError &&
+        formData.name.trim() !== '' &&
+        formData.email.trim() !== '' &&
+        formData.message.trim() !== ''
+      );
+
     const emailValidator = (email) => {
         const emailRegex = /^[^@]+@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,}$/;
-        return emailRegex.test(email);
+        return !(emailRegex.test(email) || email === '');
     }
 
     const phoneValidator = (phone) => {
         const swedishPhoneRegex = /^(?:\+46|0)7\d{8}$/;
-        return swedishPhoneRegex.test(phone);
+        return !(swedishPhoneRegex.test(phone) ||  phone === '');
     }
 
     const textValidator = (text) => {
-        return text.length > 1;
-    }
+        if (text.trim() === '') 
+            return false; 
+        return text.trim().length < 2; 
+    };
+
+    const messageValidator = (message) => {
+        if (message.trim() === '') 
+            return false; 
+        return message.trim().length < 2; 
+    };
 
     const handleChange = (e) => {
         setFormData({
@@ -30,32 +55,63 @@ const ContactForm = () => {
             [e.target.name]: e.target.value
         });
 
-        let inputType = e.target.type || "text";
-        let inputValue = e.target.value;
+        switch(e.target.name){
+            case "name": 
+                setTextError(textValidator(e.target.value))
+                break;
 
-        switch(inputType){
-            case "text": console.log(textValidator(inputValue))
-            break;
+            case "message":
+                setMessageError(messageValidator(e.target.value))
+                break;
             
-            case "email": console.log(emailValidator(inputValue))
-            break;
+            case "email": 
+                setEmailError(emailValidator(e.target.value))
+                break;
 
-            case "tel": console.log(phoneValidator(inputValue))
-            break;
+            case "phone": 
+                setPhoneError(phoneValidator(e.target.value))
+                break;
         }
-
     };
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-        console.log("handleSubmit");
-    }
+        
+        if(!isFormValid) return
+        
+        send(
+            'service_3cr8ehp',
+            'template_5y78fcg',
+            {
+                name: formData.name,
+                email: formData.email,
+                phone: formData.phone,
+                subject: formData.subject,
+                message: formData.message
+            },
+            '0ClX09wu-Knwrr--s'
+        )
+        .then((result) => {
+            setSuccessMessage("Email successfully sent!");
+            console.log(result.text);
+            setFormData({
+                name: '',
+                email: '',
+                phone: '',
+                subject: '',
+                message: ''
+            });
+        }, (error) => {
+            console.log(error.text);
+            setErrorMessage("Failed to send email, please try again.");
+        });
+    };
     
   return (
     <form className='contact-form' method="post" onSubmit={handleSubmit} noValidate>
 
-        <div className='name-container'>
-            <label htmlFor='form-name' className={""}></label>
+        <div className='input-container name-container'>
+            <label htmlFor='form-name' className={textError ? "error" : ""}>{textError ? "Minimum two characters long." : <br/>}</label>
             <input 
             id='form-name' 
             type='text' 
@@ -66,8 +122,8 @@ const ContactForm = () => {
             />
         </div>
 
-        <div className='email-container'>
-            <label htmlFor='form-email' className={""}></label>
+        <div className='input-container email-container'>
+            <label htmlFor='form-email' className={emailError ? "error" : ""}>{emailError ? "Email has to be valid." : <br/>}</label>
             <input 
             id='form-email' 
             type='email' 
@@ -78,8 +134,8 @@ const ContactForm = () => {
             />
         </div>
 
-        <div className='phone-container'>
-            <label htmlFor='form-phone' className={""}></label>
+        <div className='input-container phone-container'>
+            <label htmlFor='form-phone' className={phoneError ? "error" : ""}>{phoneError ? "Provide a valid phone number." : <br/>}</label>
             <input 
             id='form-phone' 
             type='tel' 
@@ -90,8 +146,8 @@ const ContactForm = () => {
             />
         </div>
 
-        <div className='subject-container'>
-            <label htmlFor='form-subject' className={""}></label>
+        <div className='input-container subject-container'>
+            <label htmlFor='form-subject'><br/></label>
             <input 
             id='form-subject' 
             type='text' 
@@ -102,8 +158,8 @@ const ContactForm = () => {
             />
         </div>
 
-        <div className='message-container'>
-            <label htmlFor="form-message" className={""}></label>
+        <div className='input-container message-container'>
+            <label htmlFor="form-message"className={messageError ? "error" : ""}>{messageError ? "Message cannot be empty." : <br/>}</label>
             <textarea 
             id="form-message" 
             name="message" 
@@ -114,7 +170,8 @@ const ContactForm = () => {
         </div>
 
         <div className='button-container'>
-            <button className='btn btn-theme' type='submit'>Send message</button>
+            <button disabled={!isFormValid} className='btn btn-theme' type='submit'>Send message</button>
+            <span>{successMessage}{errorMessage}</span>
         </div>
 
     </form>

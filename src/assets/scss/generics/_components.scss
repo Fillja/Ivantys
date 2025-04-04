@@ -199,30 +199,44 @@
     }
     .button-container{
         grid-area: button;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
         
         .btn{
             width: 100%;
+
+            &:disabled{
+                cursor: not-allowed;
+            }
         }
     }
 
-    input, textarea{
-        background-color: transparent;
-        color: var(--color-light);
-        border: solid 1px var(--color-gray);
-        border-radius: 8px;
-    }
-
-    input{
-        padding: 1.5rem 4rem 1.5rem 1rem;
-        width: 100%;
-
-        @include mobile{
-            width: auto;
+        
+    .input-container{
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        
+        input, textarea{
+            background-color: transparent;
+            color: var(--color-light);
+            border: solid 1px var(--color-gray);
+            border-radius: 8px;
+        }
+    
+        input{
+            padding: 1.5rem 4rem 1.5rem 1rem;
+            width: 100%;
+    
+            @include mobile{
+                width: auto;
+            }
+        }
+    
+        #form-message{
+            padding: 1.5rem 4rem 4rem 1rem;
         }
     }
-
-    textarea{
-        padding: 1.5rem 4rem 4rem 1rem;
-    }
-
 }

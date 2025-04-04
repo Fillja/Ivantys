@@ -85,3 +85,9 @@ section{
     transform: translateY(0px);
     opacity: 1;
 }
+
+//VALIDATION
+.error{
+    font-size: 1rem;
+    color: var(--color-error);
+}
