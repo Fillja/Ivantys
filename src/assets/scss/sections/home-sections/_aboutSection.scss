@@ -41,6 +41,8 @@
 
                 .image-text, svg{
                     color: var(--color-dark);
+                    text-shadow: none;
+                    filter: none;
                 }
             }
         }

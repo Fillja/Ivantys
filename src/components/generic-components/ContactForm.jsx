@@ -10,22 +10,43 @@ const ContactForm = () => {
         message: ''
     });
 
+    const emailValidator = (email) => {
+        const emailRegex = /^[^@]+@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,}$/;
+        return emailRegex.test(email);
+    }
+
+    const phoneValidator = (phone) => {
+        const swedishPhoneRegex = /^(?:\+46|0)7\d{8}$/;
+        return swedishPhoneRegex.test(phone);
+    }
+
+    const textValidator = (text) => {
+        return text.length > 1;
+    }
+
     const handleChange = (e) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value
         });
+
+        let inputType = e.target.type || "text";
+        let inputValue = e.target.value;
+
+        switch(inputType){
+            case "text": console.log(textValidator(inputValue))
+            break;
+            
+            case "email": console.log(emailValidator(inputValue))
+            break;
+
+            case "tel": console.log(phoneValidator(inputValue))
+            break;
+        }
+
     };
 
-    
-    const test = (e) => {
-        setFormData({
-            formData,
-            [e.target.name]: e.target.value
-        });
-    };
-
-    const handleSubmit = () =>{
+    const handleSubmit = (e) =>{
         e.preventDefault();
         console.log("handleSubmit");
     }
@@ -85,7 +106,6 @@ const ContactForm = () => {
             <label htmlFor="form-message" className={""}></label>
             <textarea 
             id="form-message" 
-            type="text" 
             name="message" 
             placeholder="Your Message" 
             value={formData.message} 

@@ -11,7 +11,7 @@ const ContactSection = () => {
         <div className="container bg-coal">
 
             <div className="text-container">
-                <SectionHeading subtitle={"CONTACT ME"} heading={"Get in touch with me"} />
+                <SectionHeading subtitle={"CONTACT ME"} heading={"Have a question, or just want to talk?"} />
                 <ContactLink icon={faEnvelope} link={"mailto:robin.gombkoto@gmail.com"} text={"robin.gombkoto@gmail.com"}/>
                 <ContactLink icon={faPhone} link={"tel:+46760373111"} text={"0760 37 31 11"}/>
             </div>
