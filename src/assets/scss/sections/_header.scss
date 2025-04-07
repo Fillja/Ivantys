@@ -11,66 +11,71 @@ header{
         justify-content: space-between;
         align-items: center;
 
-        .logo-container{
-            
-            .logo-link{
-                display: flex;
-                
-                .logo{
-                    width: 7.5rem;
-                }
-            }
-        }
-
-        
-        .navigation-container{
-            display: flex;
-            gap: 1rem;
-
-            .link{
-                font-size: 1rem;
-                font-family: 'Rajdhani-SemiBold', sans-serif;
-            }
-        }
-
-        .social-container{
-            display: flex;
-            gap: .5rem;
-
-            .social-link{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background-color: var(--color-gray);
-                color: var(--color-light);
-                border-radius: 50%;
-                width: 40px;
-                height: 40px;
-                transition: all .3s ease-in-out;
-
-                svg{
-                    width: 15px;
-                    height: 15px;
-                }
-
-                &:hover{
-                    background-color: var(--color-theme);
-                    color: var(--color-dark);
-                }
-            }
-
-        }
-
         .mobile-menu-container{
 
-            .burger-button{
+            .menu-button{
                 background: none;
                 border: none;
                 color: var(--color-light);
-                
+            }
+
+            .burger-button {
                 svg{
                     width: 25px;
                     height: 25px;
+                }
+            }
+
+            .mobile-menu{
+                background-color: var(--color-coal);
+                z-index: 100;
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 3rem 2rem;
+
+                transform: translateX(100%);
+                transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out; 
+            
+                &:not(.hidden) {
+                    opacity: 1;
+                    transform: translateX(0);
+                    visibility: visible;
+                    pointer-events: auto;
+                }
+
+                .burger-top{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                    gap: 4rem;
+
+                    .cross-button{                        
+                        svg{
+                            width: 35px;
+                            height: 35px;
+                        }
+                    }
+                    
+                    .navigation-container{
+                        flex-direction: column;
+                        gap: 4rem;
+
+                        .link{
+                            font-size: 2.5rem;
+                            color: var(--color-light);
+
+
+                            &::after {
+                                transform: scaleX(0);
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -16,7 +16,7 @@ const AboutSection = () => {
                 <p className='about-text'>Nam pretium ipsum iaculis, tincidunt arcu et, sagittis orci. Quisque nec nibh id velit gravida facilisis. Sed vel venenatis justo, ultricies imperdiet nisi. Aenean bibendum leo leo, eu bibendum lorem mattis vel. Vestibulum feugiat, neque quis accumsan blandit, nulla odio ornare elit, sed dictum est quam a tellus.</p>
             </div>
 
-            <NavLink className="image-link">
+            <NavLink to="/about" className="image-link">
                 <ImageContainer imgSrc={WorkingImage} imgAlt={"Person working on a laptop"} imgText={"ABOUT ME"} textIcon={faSquareArrowUpRight} />
             </NavLink>
         </div>

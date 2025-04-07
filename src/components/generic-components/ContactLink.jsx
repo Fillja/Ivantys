@@ -5,8 +5,8 @@ import { NavLink } from 'react-router-dom'
 const ContactLink = ({icon, text, link}) => {
   return (
     <div className='contact-link'>
-        <FontAwesomeIcon icon={icon} className='contact-icon' />
-        <NavLink to={link} className="link">{text}</NavLink>
+      <FontAwesomeIcon icon={icon} className='contact-icon' />
+      <NavLink to={link} className="link">{text}</NavLink>
     </div>
   )
 }

@@ -46,6 +46,13 @@ section{
     }
 }
 
+.hidden{
+    opacity: 0;
+    transform: translateX(100%);
+    pointer-events: none;
+    visibility: hidden;
+}
+
 .mobile-hidden{
     @media(max-width: 768px){
         visibility: hidden !important;
@@ -67,27 +74,14 @@ section{
     }
 }
 
-//SCROLL REVEAL STYLING
-.hidden{
-    visibility: hidden;
-    transform: translateX(100%); 
-    pointer-events: none; 
-}
-
-.reveal{
-    position: relative;
-    transform: translateY(100px);
-    opacity: 0;
-    transition: transform .5s ease-in-out, opacity .5s ease-in-out;
-}
-
-.reveal.active{
-    transform: translateY(0px);
-    opacity: 1;
-}
-
 //VALIDATION
 .error{
     font-size: 1rem;
     color: var(--color-error);
 }
+
+//NO SCROLL
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+  }

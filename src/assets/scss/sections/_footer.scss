@@ -1,0 +1,37 @@
+footer{
+    padding: 4rem 1rem;
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 3rem;
+
+        @include tablet{
+            flex-direction: row;
+        }
+
+        .footer-content-wrapper{
+            display: flex;
+            flex-direction: column;
+            max-width: 15rem;
+            gap: 1.5rem;
+
+            .contact-link{
+            
+                .contact-icon{
+                    font-size: .9rem;
+                    padding: .9rem;
+                }
+            }
+
+            .navigation-container{
+                flex-direction: column;
+                
+                .link{
+                    width: fit-content;
+                }
+            }
+        }
+    }
+}

@@ -134,6 +134,19 @@
     }
 }
 
+//LOGO CONTAINER
+.logo-container{
+            
+    .logo-link{
+        display: flex;
+        width: fit-content;
+        
+        .logo{
+            width: 7.5rem;
+        }
+    }
+}
+
 //CONTACT LINK
 .contact-link{
     display: flex;
@@ -146,6 +159,45 @@
         padding: 1.3rem;
         border: 1px solid var(--color-body);
         color: var(--color-light);
+    }
+}
+
+//NAVIGATION MENU
+.navigation-container{
+    display: flex;
+    gap: 1rem;
+
+    .link{
+        font-size: 1rem;
+        font-family: 'Rajdhani-SemiBold', sans-serif;
+    }
+}
+
+//SOCIAL MEDIA
+.social-container{
+    display: flex;
+    gap: .5rem;
+
+    .social-link{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--color-gray);
+        color: var(--color-light);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        transition: all .3s ease-in-out;
+
+        svg{
+            width: 15px;
+            height: 15px;
+        }
+
+        &:hover{
+            background-color: var(--color-theme);
+            color: var(--color-dark);
+        }
     }
 }
 
